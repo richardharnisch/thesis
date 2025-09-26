@@ -14,7 +14,7 @@ print(f"Starting observation: {observation}")
 # [cart_position, cart_velocity, pole_angle, pole_angular_velocity]
 
 episode_over = False
-total_reward = 0
+total_reward = 0.0
 
 while not episode_over:
     # Choose an action: 0 = push cart left, 1 = push cart right
@@ -29,7 +29,7 @@ while not episode_over:
     # terminated: True if pole falls too far (agent failed)
     # truncated: True if we hit the time limit (500 steps)
 
-    total_reward += reward
+    total_reward += float(reward)
     episode_over = terminated or truncated
 
 print(f"Episode finished! Total reward: {total_reward}")
